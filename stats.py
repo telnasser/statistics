@@ -27,11 +27,6 @@ column_names = data[0] # this is the first row
 data_rows = data[1::] # these are all the following rows of data
 df = pd.DataFrame(data_rows, columns=column_names)
 
-print "****"
-x = stats.mode(df['Alcohol'])
-print x[0]
-print "****"
-
 # Convert Alcohol and Tobacco columns to float
 df['Alcohol'] = df['Alcohol'].astype(float)
 df['Tobacco'] = df['Tobacco'].astype(float)
@@ -45,6 +40,8 @@ print "The mean for Tobacco dataset is %f" % df['Tobacco'].mean()
 
 print "The median for Alcohol dataset is %f" % df['Alcohol'].median() 
 print "The median for Tobacco dataset is %f" % df['Tobacco'].median() 
+
+##Here I'm having a problem printing and formatting the result of the mode output
 print "The mode for Alcohol dataset is ", stats.mode(df['Alcohol']) 
 print "The mode for Tobacco dataset is ", stats.mode(df['Tobacco']) 
 
